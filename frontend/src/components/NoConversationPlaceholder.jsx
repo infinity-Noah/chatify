@@ -1,4 +1,9 @@
 function NoConversationPlaceholder() {
-  return <div>NoConversationPlaceholder</div>;
+    return(
+        <div>
+            Hello
+        </div>
+    )
 }
+
 export default NoConversationPlaceholder;
