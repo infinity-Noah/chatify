@@ -2,13 +2,13 @@ import express from 'express';
 import cookieParser from "cookie-parser";
 import path from "path";
 import cors from "cors";
+import { app, server } from './lib/socket.js';
 
 import authRoutes from "./routes/auth.route.js";
 import messageRoutes from "./routes/message.route.js"
 import { connectDB } from "./lib/db.js";
 import { ENV } from './lib/env.js';
 
-const app = express();
 const __dirname = path.resolve();
 
 const PORT = ENV.PORT;
@@ -30,7 +30,7 @@ if (ENV.NODE_ENV === "production") {
 }
 
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
     console.log(`Server started at PORT: ${PORT}`);
     connectDB();
 });
